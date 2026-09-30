@@ -1,1 +1,18 @@
-{"bin":{"csd-repair":"./bin/csd-repair.ts","csd-scan":"./bin/csd-scan.ts","csd-verify":"./bin/csd-verify.ts"},"description":"Rewrite operational docs so safety classifiers stop false-positive flagging them — Bun CLI tools (scan/repair/verify) over a shared 5-class pattern table.","license":"MIT","name":"classifier-safe-docs","scripts":{"scan":"bun bin/csd-scan.ts .","test":"bun test","verify":"bun bin/csd-verify.ts README.md docs/ SKILL.md"},"type":"module","version":"0.2.0"}
+{
+  "bin": {
+    "csd-repair": "./bin/csd-repair.ts",
+    "csd-scan": "./bin/csd-scan.ts",
+    "csd-verify": "./bin/csd-verify.ts",
+    "csd-gate": "./bin/csd-gate.ts"
+  },
+  "description": "Rewrite operational docs so safety classifiers stop false-positive flagging them \u2014 Bun CLI tools (scan/repair/verify) over a shared 6-class pattern table.",
+  "license": "MIT",
+  "name": "classifier-safe-docs",
+  "scripts": {
+    "scan": "bun bin/csd-scan.ts .",
+    "test": "bun test",
+    "verify": "bun bin/csd-verify.ts README.md docs/ SKILL.md"
+  },
+  "type": "module",
+  "version": "0.3.0"
+}
