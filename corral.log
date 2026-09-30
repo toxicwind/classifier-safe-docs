@@ -1,4 +1,0 @@
-nim-proxy: routing all model calls through http://127.0.0.1:25193 (1 key(s), model nvidia/nemotron-3-ultra-550b-a55b)
-
-❌ Workflow exited with code 1
-
