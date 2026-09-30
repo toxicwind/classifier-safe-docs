@@ -80,7 +80,7 @@ the classifier was right — rewrite the purpose, not the phrasing."""
 
 [skill]
 name = "classifier-safe-docs"
-version = "0.1.0"
+version = "0.2.0"
 description = """Rewrite operational docs and doctrine so prompt-injection / safety classifiers stop false-positive flagging them, without losing the operational point. Diagnose which phrases trigger the classifier, rephrase them into observational/behavioral language, and verify. Use when a doc read gets blocked by policyguard/pi_check, when an agent's instructions keep tripping safety filters, or when Chris says "make it not trigger the classifier". This is false-positive repair for our own docs — not a bypass technique for someone else's guardrails."""
 author = ""
 license = ""
@@ -94,7 +94,11 @@ type = "promptonly"
 entry = ""
 
 [tools]
-provided = []
+provided = [
+    "csd-scan — scan a file/dir for the 5 trigger classes (path:line:class: excerpt)",
+    "csd-repair — apply safe-shape rewrites; refuses evasion-purpose content (exit 3)",
+    "csd-verify — assert a doc is clean per the pattern table (exit 0/1)",
+]
 
 [requirements]
 tools = []

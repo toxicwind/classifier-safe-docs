@@ -1,0 +1,23 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun test
+      - run: bun bin/csd-scan.ts README.md docs/ARCHITECTURE.md CONTRIBUTING.md SECURITY.md
+      - run: bun bin/csd-verify.ts README.md docs/ARCHITECTURE.md CONTRIBUTING.md SECURITY.md
+      # NOTE: docs/EXAMPLES.md intentionally contains before/after pairs with
+      # literal trigger phrases — it is documentation, not a clean doc.
+      # NOTE: SKILL.md and prompt_context.md are the original seed files that
+      # define the trigger classes with examples — historical artifacts,
+      # excluded from the self-check by design.
